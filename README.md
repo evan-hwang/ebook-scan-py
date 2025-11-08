@@ -90,6 +90,46 @@ ebook-scan-py/
 └── .pre-commit-config.yaml
 ```
 
+### 디렉토리 및 모듈 설명
+
+#### `src/ebook_scan/`
+메인 애플리케이션 소스 코드 디렉토리
+
+- `__main__.py`: 애플리케이션 진입점으로, `python -m ebook_scan` 명령어 실행 시 호출됨
+- `main.py`: 애플리케이션의 주요 로직 및 초기화 코드 포함
+
+#### `src/ebook_scan/config/`
+애플리케이션 설정 관련 모듈
+
+- `app_config.py`: 애플리케이션 전반의 설정 값들을 관리 (예: 기본 캡처 지연 시간, 출력 디렉토리 등)
+
+#### `src/ebook_scan/gui/`
+그래픽 사용자 인터페이스 관련 모듈
+
+- `main_window.py`: 메인 윈도우 및 UI 컴포넌트 정의, 사용자 상호작용 처리
+
+#### `src/ebook_scan/core/`
+핵심 기능 및 비즈니스 로직 모듈
+
+- `coordinate_manager.py`: 화면 좌표 관리 및 계산 기능
+- `screen_capture_manager.py`: 화면 캡처 기능 구현 (특정 영역 캡처, 자동 스크롤 등)
+- `pdf_generator.py`: 캡처된 이미지들을 PDF 파일로 병합하는 기능
+
+#### `src/ebook_scan/utils/`
+유틸리티 함수 및 보조 기능 모듈
+
+- `helpers.py`: 다양한 보조 함수들 (파일 경로 처리, 유효성 검사 등)
+
+#### 기타 디렉토리 및 파일
+
+- `tests/`: 단위 테스트 및 통합 테스트 코드
+- `requirements.txt`: 프로덕션 환경 의존성 목록
+- `requirements-dev.txt`: 개발 환경 의존성 목록 (테스트, 포맷터 등)
+- `setup.py`: 패키지 설치 및 배포 설정
+- `pyproject.toml`: 현대적 파이썬 프로젝트 설정 (빌드, 포맷터 설정 등)
+- `.gitignore`: Git 버전 관리에서 제외할 파일 및 디렉토리 패턴
+- `.pre-commit-config.yaml`: 코드 커밋 전 자동 실행될 훅 설정
+
 ## 개발
 
 ### 개발 환경 설정

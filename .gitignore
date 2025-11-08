@@ -144,3 +144,17 @@ Thumbs.db
 # Application-specific files
 pdf_images/
 *.pdf
+
+# Claude Code specific files
+.claude/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Log files
+*.log
+
+# Backup files
+*.bak
+*.backup
