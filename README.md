@@ -2,6 +2,8 @@
 
 eBook Scan은 전자책을 PDF로 변환하기 위한 파이썬 기반의 GUI 애플리케이션입니다. 화면의 특정 영역을 캡처하여 페이지별로 저장하고, 이를 하나의 PDF 파일로 병합할 수 있습니다.
 
+이 프로젝트는 현대적인 Python 개발 관행을 따르며, pyproject.toml을 중심으로 한 단일 의존성 관리 시스템을 사용합니다. 불필요한 파일과 중복된 코드를 제거하여 깔끔하고 유지보수가 쉬운 구조를 제공합니다.
+
 ## 기능
 
 - GUI 기반의 직관적인 인터페이스
@@ -35,7 +37,12 @@ eBook Scan은 전자책을 PDF로 변환하기 위한 파이썬 기반의 GUI �
 
 3. 의존성 설치:
    ```bash
-   pip install -r requirements.txt
+   pip install .
+   ```
+
+   개발용 의존성까지 설치하려면:
+   ```bash
+   pip install -e .[dev]
    ```
 
 4. 애플리케이션 실행:
@@ -80,9 +87,6 @@ ebook-scan-py/
 │           └── helpers.py
 ├── tests/
 ├── docs/
-├── scripts/
-├── requirements.txt
-├── requirements-dev.txt
 ├── setup.py
 ├── pyproject.toml
 ├── README.md
@@ -123,10 +127,8 @@ ebook-scan-py/
 #### 기타 디렉토리 및 파일
 
 - `tests/`: 단위 테스트 및 통합 테스트 코드
-- `requirements.txt`: 프로덕션 환경 의존성 목록
-- `requirements-dev.txt`: 개발 환경 의존성 목록 (테스트, 포맷터 등)
-- `setup.py`: 패키지 설치 및 배포 설정
-- `pyproject.toml`: 현대적 파이썬 프로젝트 설정 (빌드, 포맷터 설정 등)
+- `setup.py`: 패키지 설치 및 배포 설정 (pyproject.toml과 연동)
+- `pyproject.toml`: 현대적 파이썬 프로젝트 설정 (의존성, 빌드, 포맷터 설정 등)
 - `.gitignore`: Git 버전 관리에서 제외할 파일 및 디렉토리 패턴
 - `.pre-commit-config.yaml`: 코드 커밋 전 자동 실행될 훅 설정
 
@@ -137,8 +139,10 @@ ebook-scan-py/
 개발을 위해 추가적인 의존성을 설치하려면 다음 명령을 실행하세요:
 
 ```bash
-pip install -r requirements-dev.txt
+pip install -e .[dev]
 ```
+
+이는 프로덕션 의존성과 함께 개발용 의존성(테스트, 포맷터 등)도 설치합니다.
 
 ### 테스트 실행
 
